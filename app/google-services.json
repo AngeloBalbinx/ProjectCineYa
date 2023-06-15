@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "50957581763",
+    "project_id": "projectcineya",
+    "storage_bucket": "projectcineya.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50957581763:android:3bcca07df6b3d165965176",
+        "android_client_info": {
+          "package_name": "com.example.projectcineya"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50957581763-a0h75t90ftu3u5r2kaqkmunr9mg11g42.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJJwcX2Kn1inmPTUX09U0P0Oo0O9xAt00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50957581763-a0h75t90ftu3u5r2kaqkmunr9mg11g42.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
