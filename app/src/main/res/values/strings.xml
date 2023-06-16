@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ProjectCineYa</string>
+    <string name="bienvenido">Bienvenido!</string>
+    <string name="registrarse">Regístrate</string>
+    <string name="iniciarsesion">Iniciar Sesión</string>
+    <string name="correo">Correo</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="sinregistrar">Aún no tienes cuenta? Registrarse</string>
+    <string name="confirmarcontraseña">Confimar Contraseña</string>
+    <string name="registrado">Ya tienes cuenta? Ingresar</string>
 </resources>
