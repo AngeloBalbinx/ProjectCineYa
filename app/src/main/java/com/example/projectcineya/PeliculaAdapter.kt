@@ -24,6 +24,10 @@ class PeliculaAdapter (private val context: Context, private var dataList: List<
         holder.recGenero.text=dataList[position].genero
 
     }
+    fun searchDataList(searchList: List<PeliculaClass>){
+        dataList= searchList
+        notifyDataSetChanged()
+    }
 
 
 

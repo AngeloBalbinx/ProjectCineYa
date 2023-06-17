@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.projectcineya.databinding.ActivityMainBinding
 import com.google.firebase.database.*
@@ -57,5 +58,26 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,SubirActivity::class.java)
             startActivity(intent)
         }
+        binding.buscar.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                buscarLista(newText)
+                return true
+            }
+
+        })
+    }
+    fun buscarLista(text:String){
+        val buscarLista = ArrayList<PeliculaClass>()
+        for(peliculaClass in dataList){
+            if(peliculaClass.titulo?.lowercase()?.contains(text.lowercase())==true){
+                buscarLista.add(peliculaClass)
+            }
+        }
+        adapter.searchDataList(buscarLista)
+
     }
 }

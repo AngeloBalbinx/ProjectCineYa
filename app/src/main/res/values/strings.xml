@@ -18,4 +18,5 @@
     <string name="director">Director</string>
     <string name="genero">Género</string>
     <string name="cargando">Cargando...</string>
+    <string name="buscar">Buscar...</string>
 </resources>
