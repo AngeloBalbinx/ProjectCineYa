@@ -20,7 +20,7 @@ class DetalleActivity : AppCompatActivity() {
     private lateinit var detalleImagen: ImageView
     private lateinit var botonEliminar: FloatingActionButton
     private lateinit var botonEditar: FloatingActionButton
-    /*private var key = ""*/
+    private var key = ""
     private var imageUrl = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,11 +40,11 @@ class DetalleActivity : AppCompatActivity() {
             detalleGenero.text = bundle.getString("Genero")
             detalleTitulo.text = bundle.getString("Titulo")
             detalleDirector.text = bundle.getString("Director")
-            /*key = bundle.getString("Key")!!*/
+            key = bundle.getString("Key")!!
             imageUrl = bundle.getString("Imagen")!!
             Glide.with(this).load(bundle.getString("Imagen")).into(detalleImagen)
         }
-        /*botonEliminar.setOnClickListener {
+        botonEliminar.setOnClickListener {
             val reference: DatabaseReference = FirebaseDatabase.getInstance().getReference("ProjectCineYa")
             val storage: FirebaseStorage = FirebaseStorage.getInstance()
 
@@ -55,7 +55,7 @@ class DetalleActivity : AppCompatActivity() {
                 startActivity(Intent(applicationContext, MainActivity::class.java))
                 finish()
             }
-        }*/
+        }
         /*botonEditar.setOnClickListener {
             val intent = Intent(this@DetalleActivity, UpdateActivity::class.java)
                 .putExtra("Genero", detalleGenero.text.toString())

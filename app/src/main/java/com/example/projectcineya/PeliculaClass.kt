@@ -5,6 +5,7 @@ class PeliculaClass {
     var director:String?=null
     var genero:String?=null
     var imagen:String?=null
+    var key:String?=null
 
 
 

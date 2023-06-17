@@ -42,6 +42,7 @@ class MainActivity : AppCompatActivity() {
                 dataList.clear()
                 for(itemSnapshot in snapshot.children){
                     val peliculaClass = itemSnapshot.getValue(PeliculaClass::class.java)
+                    peliculaClass?.key=itemSnapshot.key
                     if(peliculaClass!=null){
                         dataList.add(peliculaClass)
                     }
