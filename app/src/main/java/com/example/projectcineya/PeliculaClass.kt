@@ -6,11 +6,15 @@ class PeliculaClass {
     var genero:String?=null
     var imagen:String?=null
 
+
+
+    constructor(){}
     constructor(titulo: String?, director: String?, genero: String?, imagen: String?) {
         this.titulo = titulo
         this.director = director
         this.genero = genero
         this.imagen = imagen
     }
-    constructor() {}
+
+
 }

@@ -25,4 +25,5 @@
     <string name="aquivatucorreo">Aquí va tu correo</string>
     <string name="cancelar">Cancelar</string>
     <string name="resetear">Resetear</string>
+    <string name="imagendepelicula">Imagen de la película</string>
 </resources>
