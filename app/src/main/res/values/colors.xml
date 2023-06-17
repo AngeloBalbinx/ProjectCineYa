@@ -11,6 +11,9 @@
     <color name="verdepastel">#77dd77</color>
     <color name="amarillopastel">#fdfd96</color>
     <color name="azulpastel">#84b6f4</color>
-    <color name="rosapastel">#fdcae1</color>
+    <color name="rosapastel">#ff94a2</color>
+    <color name="verdebackground">#a2ff94</color>
+    <color name="rosadobackground">#FF94A2</color>
+
 
 </resources>

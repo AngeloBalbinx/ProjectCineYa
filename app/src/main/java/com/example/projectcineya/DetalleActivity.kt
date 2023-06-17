@@ -56,14 +56,14 @@ class DetalleActivity : AppCompatActivity() {
                 finish()
             }
         }
-        /*botonEditar.setOnClickListener {
-            val intent = Intent(this@DetalleActivity, UpdateActivity::class.java)
+        botonEditar.setOnClickListener {
+            val intent = Intent(this@DetalleActivity, ActualizarActivity::class.java)
                 .putExtra("Genero", detalleGenero.text.toString())
                 .putExtra("Titulo", detalleTitulo.text.toString())
                 .putExtra("Director", detalleDirector.text.toString())
                 .putExtra("Imagen", imageUrl)
                 .putExtra("Key", key)
             startActivity(intent)
-        }*/
+        }
     }
 }

@@ -26,4 +26,6 @@
     <string name="cancelar">Cancelar</string>
     <string name="resetear">Resetear</string>
     <string name="imagendepelicula">Imagen de la película</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="actualizando">Actualizando...</string>
 </resources>

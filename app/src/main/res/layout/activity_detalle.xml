@@ -69,7 +69,8 @@
             app:menu_colorNormal="@color/rosapastel"
             app:menu_icon="@drawable/baseline_format_list_bulleted_24"
             app:menu_openDirection="up"
-            app:menu_showShadow="true">
+            app:menu_showShadow="true"
+            app:fab_size="normal">
 
             <com.github.clans.fab.FloatingActionButton
                 android:layout_width="wrap_content"
@@ -78,7 +79,7 @@
                 android:src="@drawable/baseline_edit_24"
                 app:fab_showShadow="true"
                 app:fab_colorNormal="@color/amarillopastel"
-                app:fab_size="mini"/>
+                app:fab_size="normal"/>
 
             <com.github.clans.fab.FloatingActionButton
                 android:layout_width="wrap_content"
@@ -87,7 +88,7 @@
                 android:src="@drawable/baseline_delete_24"
                 app:fab_showShadow="true"
                 app:fab_colorNormal="@color/rojopastel"
-                app:fab_size="mini"/>
+                app:fab_size="normal"/>
 
         </com.github.clans.fab.FloatingActionMenu>
 
