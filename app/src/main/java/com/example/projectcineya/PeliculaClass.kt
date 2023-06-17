@@ -12,4 +12,5 @@ class PeliculaClass {
         this.genero = genero
         this.imagen = imagen
     }
+    constructor() {}
 }
