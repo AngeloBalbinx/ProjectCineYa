@@ -19,4 +19,10 @@
     <string name="genero">Género</string>
     <string name="cargando">Cargando...</string>
     <string name="buscar">Buscar...</string>
+    <string name="olvidastecontra">Olvidaste tu contraseña?</string>
+    <string name="ingresacorreo">Ingresa tu correo electrónico</string>
+    <string name="olvidemicontra">Olvidé mi contraseña</string>
+    <string name="aquivatucorreo">Aquí va tu correo</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="resetear">Resetear</string>
 </resources>

@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import android.content.Context
 class PeliculaAdapter (private val context: Context, private var dataList: List<PeliculaClass>) : RecyclerView.Adapter<PeliculaVH>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeliculaVH {
-        val view:View = LayoutInflater.from(parent.context).inflate(R.layout.recylcer_item,parent,false)
+        val view:View = LayoutInflater.from(parent.context).inflate(R.layout.recycler_item,parent,false)
         return PeliculaVH(view)
 
     }
