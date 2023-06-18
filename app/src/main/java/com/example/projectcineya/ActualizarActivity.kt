@@ -8,6 +8,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.RadioButton
+import android.widget.RadioGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -19,6 +22,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import org.w3c.dom.Text
 
 
 class ActualizarActivity : AppCompatActivity() {
@@ -28,9 +32,13 @@ class ActualizarActivity : AppCompatActivity() {
     private lateinit var actualizarTitulo: EditText
     private lateinit var actualizarGenero: EditText
     private lateinit var actualizarDirector: EditText
+    private lateinit var radioGroup:RadioGroup
+    private lateinit var cineSeleccionado:String
+    private lateinit var actualizarCine : EditText
     private var titulo: String? = null
     private var genero: String? = null
     private var director: String? = null
+    private var cine: String?=null
     private var imageUrl: String? = null
     private var key = ""
     private var oldImageURL: String? = null
@@ -47,6 +55,20 @@ class ActualizarActivity : AppCompatActivity() {
         actualizarImagen = findViewById(R.id.actualizaimagen)
         actualizarDirector = findViewById(R.id.actualizaDirector)
         actualizarGenero = findViewById(R.id.actualizaGenero)
+        /*val selectedId = radioGroup.checkedRadioButtonId
+        if(selectedId!=-1){
+            val radioButton = findViewById<RadioButton>(selectedId)
+            val valorRB = radioButton.text.toString()
+
+        }*/
+
+        radioGroup = findViewById(R.id.radioGroupCine)
+        radioGroup.setOnCheckedChangeListener { group, checkedId ->
+            val radioButton: RadioButton = findViewById(checkedId)
+
+            val valorSeleccionado = radioButton.text.toString()
+            cineSeleccionado = valorSeleccionado
+        }
 
         val activityResultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -64,6 +86,7 @@ class ActualizarActivity : AppCompatActivity() {
             Glide.with(this@ActualizarActivity).load(bundle.getString("Imagen")).into(actualizarImagen)
             actualizarTitulo.setText(bundle.getString("Titulo"))
             actualizarDirector.setText(bundle.getString("Director"))
+            actualizarCine.setText(bundle.getString("Cine"))
             actualizarGenero.setText(bundle.getString("Genero"))
             key = bundle.getString("Key")!!
             oldImageURL = bundle.getString("Imagen")
@@ -113,8 +136,8 @@ class ActualizarActivity : AppCompatActivity() {
         titulo = actualizarTitulo.text.toString().trim()
         director = actualizarDirector.text.toString().trim()
         genero = actualizarGenero.text.toString()
-
-        val dataClass = PeliculaClass(titulo, director, genero, imageUrl)
+        cine = cineSeleccionado
+        val dataClass = PeliculaClass(titulo, director, genero, cine,imageUrl)
 
         databaseReference.setValue(dataClass)
             .addOnCompleteListener { task: Task<Void?> ->

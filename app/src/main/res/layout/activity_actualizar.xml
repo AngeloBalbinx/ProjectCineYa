@@ -61,7 +61,29 @@
                 android:hint="@string/ingresagenero"
                 android:gravity="start|center_vertical"
                 android:textColor="@color/black"/>
+            <RadioGroup
+                android:id="@+id/radioGroupCine"
+                android:checkedButton="@+id/actualizaCinemark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <RadioButton
+                    android:id="@+id/actualizaCinemark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/cinemark"/>
+                <RadioButton
+                    android:id="@+id/actualizaCineplanet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/cineplanet"/>
+                <RadioButton
+                    android:id="@+id/actualizaCinepolis"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/cinepolis"/>
 
+            </RadioGroup>
             <Button
                 android:id="@+id/btn_actualizar"
                 android:layout_width="match_parent"

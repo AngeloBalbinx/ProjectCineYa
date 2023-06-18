@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         app:cardCornerRadius="5dp"
@@ -61,7 +61,29 @@
             android:hint="@string/ingresagenero"
             android:gravity="start|center_vertical"
             android:textColor="@color/black"/>
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:checkedButton="@+id/radioCinemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <RadioButton
+                android:id="@+id/radioCinemark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/cinemark"/>
+            <RadioButton
+                android:id="@+id/radioCineplanet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/cineplanet"/>
+            <RadioButton
+                android:id="@+id/radioCinepolis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/cinepolis"/>
 
+        </RadioGroup>
         <Button
             android:id="@+id/btn_guardar"
             android:layout_width="match_parent"

@@ -28,4 +28,9 @@
     <string name="imagendepelicula">Imagen de la película</string>
     <string name="actualizar">Actualizar</string>
     <string name="actualizando">Actualizando...</string>
+    <string name="cineplanet">Cineplanet</string>
+    <string name="cinemark">CineMark</string>
+    <string name="cinepolis">Cinépolis</string>
+    <string name="cine">Cine</string>
+
 </resources>

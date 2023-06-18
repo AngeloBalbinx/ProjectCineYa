@@ -18,6 +18,7 @@ class DetalleActivity : AppCompatActivity() {
     private lateinit var detalleTitulo: TextView
     private lateinit var detalleDirector: TextView
     private lateinit var detalleImagen: ImageView
+    private lateinit var detalleCine:TextView
     private lateinit var botonEliminar: FloatingActionButton
     private lateinit var botonEditar: FloatingActionButton
     private var key = ""
@@ -30,6 +31,7 @@ class DetalleActivity : AppCompatActivity() {
         detalleGenero = findViewById(R.id.detalleGenero)
         detalleTitulo = findViewById(R.id.detalleTitulo)
         detalleDirector = findViewById(R.id.detalleDirector)
+        detalleCine= findViewById(R.id.detalleCine)
         detalleImagen = findViewById(R.id.detalleImagen)
         botonEditar = findViewById(R.id.btnEditar)
         botonEliminar = findViewById(R.id.btnEliminar)
@@ -40,6 +42,7 @@ class DetalleActivity : AppCompatActivity() {
             detalleGenero.text = bundle.getString("Genero")
             detalleTitulo.text = bundle.getString("Titulo")
             detalleDirector.text = bundle.getString("Director")
+            detalleCine.text=bundle.getString("Cine")
             key = bundle.getString("Key")!!
             imageUrl = bundle.getString("Imagen")!!
             Glide.with(this).load(bundle.getString("Imagen")).into(detalleImagen)
@@ -61,6 +64,7 @@ class DetalleActivity : AppCompatActivity() {
                 .putExtra("Genero", detalleGenero.text.toString())
                 .putExtra("Titulo", detalleTitulo.text.toString())
                 .putExtra("Director", detalleDirector.text.toString())
+                .putExtra("Cine",detalleCine.text.toString())
                 .putExtra("Imagen", imageUrl)
                 .putExtra("Key", key)
             startActivity(intent)

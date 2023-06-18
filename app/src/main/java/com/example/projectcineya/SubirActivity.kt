@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
@@ -20,6 +21,8 @@ class SubirActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySubirBinding
     var imagenURL:String?=null
     var uri: Uri?=null
+    var cineSeleccionado:String = ""
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,7 +73,16 @@ class SubirActivity : AppCompatActivity() {
         val titulo = binding.subirtitulo.text.toString()
         val director = binding.subirDirector.text.toString()
         val genero = binding.subirGenero.text.toString()
-        val pelicula = PeliculaClass(titulo,director,genero,imagenURL)
+        val radioGroup =binding.radioGroup
+        val selectedId = radioGroup.checkedRadioButtonId
+        if(selectedId!=-1){
+            val radioButton = findViewById<RadioButton>(selectedId)
+            cineSeleccionado = radioButton.text.toString()
+        }else{
+            Toast.makeText(this@SubirActivity,"No se ha seleccionado ningun cine",Toast.LENGTH_SHORT).show()
+        }
+
+        val pelicula = PeliculaClass(titulo,director,genero, imagenURL,cineSeleccionado)
         val currentDate=DateFormat.getTimeInstance().format(Calendar.getInstance().time)
         FirebaseDatabase.getInstance().getReference("ProjectCineYa").child(currentDate)
             .setValue(pelicula).addOnCompleteListener{task ->
