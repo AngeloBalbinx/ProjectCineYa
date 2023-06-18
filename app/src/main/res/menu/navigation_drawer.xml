@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn = "navigation_view">
+
+    <item
+        android:id="@+id/nav_main"
+        android:title="@string/administrador"
+        android:checkableBehavior="single">
+    <menu>
+        <item
+
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/movieicon"
+            android:title="@string/peliculas"/>
+
+
+    </menu>
+    </item>
+    <item
+        android:title="@string/cliente">
+
+        <menu>
+            <item
+                android:id="@+id/nav_cines"
+                android:icon="@drawable/cinemaicon"
+                android:title="@string/cines"/>
+            <item
+                android:id="@+id/nav_salir"
+                android:icon="@drawable/logouticon"
+                android:title="@string/salir"/>
+        </menu>
+
+    </item>
+
+</menu>

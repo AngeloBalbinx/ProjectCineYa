@@ -28,4 +28,15 @@
     <string name="imagendepelicula">Imagen de la película</string>
     <string name="actualizar">Actualizar</string>
     <string name="actualizando">Actualizando...</string>
+    <string name="abrirnav">Abrir Navigation Drawer</string>
+    <string name="cerrarnav">Cerrar Navigation Drawer</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="peliculas">Películas</string>
+    <string name="cines">Cines</string>
+    <string name="salir">Salir</string>
+    <string name="administrador">Administrador</string>
+    <string name="cliente">Cliente</string>
+
+
+
 </resources>
