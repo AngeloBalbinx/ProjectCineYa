@@ -55,20 +55,22 @@
         android:textColor="@color/black"/>
 
     <TextView
+        android:id="@+id/detalleCine"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
+
+
+        android:background="@drawable/border"
         android:padding="20dp"
         android:text="@string/cine"
-        android:background="@drawable/border"
-        android:layout_gravity="center"
-        android:id="@+id/detalleCine"
-        android:textSize="18sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
 
 

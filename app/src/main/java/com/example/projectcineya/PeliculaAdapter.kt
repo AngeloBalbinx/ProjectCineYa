@@ -24,6 +24,7 @@ class PeliculaAdapter (private val context: Context, private var dataList: List<
         holder.recTitulo.text=dataList[position].titulo
         holder.recDirector.text=dataList[position].director
         holder.recGenero.text=dataList[position].genero
+        holder.recCine.text=dataList[position].cine
 
         holder.recCard.setOnClickListener {
             val intent = Intent(context,DetalleActivity::class.java)
@@ -32,6 +33,7 @@ class PeliculaAdapter (private val context: Context, private var dataList: List<
             intent.putExtra("Director",dataList[holder.adapterPosition].director)
             intent.putExtra("Key",dataList[holder.adapterPosition].key)
             intent.putExtra("Genero",dataList[holder.adapterPosition].genero)
+            intent.putExtra("Cine",dataList[holder.adapterPosition].cine)
             context.startActivity(intent)
         }
 

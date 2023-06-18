@@ -34,7 +34,7 @@ class ActualizarActivity : AppCompatActivity() {
     private lateinit var actualizarDirector: EditText
     private lateinit var radioGroup:RadioGroup
     private lateinit var cineSeleccionado:String
-    private lateinit var actualizarCine : EditText
+    private lateinit var actualizarCine : TextView
     private var titulo: String? = null
     private var genero: String? = null
     private var director: String? = null
@@ -64,7 +64,7 @@ class ActualizarActivity : AppCompatActivity() {
 
         radioGroup = findViewById(R.id.radioGroupCine)
         radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            val radioButton: RadioButton = findViewById(checkedId)
+            val radioButton: RadioButton = findViewById<RadioButton>(checkedId)
 
             val valorSeleccionado = radioButton.text.toString()
             cineSeleccionado = valorSeleccionado
@@ -135,7 +135,7 @@ class ActualizarActivity : AppCompatActivity() {
     private fun updateData() {
         titulo = actualizarTitulo.text.toString().trim()
         director = actualizarDirector.text.toString().trim()
-        genero = actualizarGenero.text.toString()
+        genero = actualizarGenero.text.toString().trim()
         cine = cineSeleccionado
         val dataClass = PeliculaClass(titulo, director, genero, cine,imageUrl)
 
