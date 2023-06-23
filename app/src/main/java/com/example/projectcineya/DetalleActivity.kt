@@ -21,6 +21,7 @@ class DetalleActivity : AppCompatActivity() {
     private lateinit var detalleCine:TextView
     private lateinit var botonEliminar: FloatingActionButton
     private lateinit var botonEditar: FloatingActionButton
+    private lateinit var botonUbicacion: FloatingActionButton
     private var key = ""
     private var imageUrl = ""
 
@@ -35,6 +36,7 @@ class DetalleActivity : AppCompatActivity() {
         detalleImagen = findViewById(R.id.detalleImagen)
         botonEditar = findViewById(R.id.btnEditar)
         botonEliminar = findViewById(R.id.btnEliminar)
+        botonUbicacion = findViewById(R.id.btnUbicacion)
 
 
         val bundle = intent.extras
@@ -67,6 +69,12 @@ class DetalleActivity : AppCompatActivity() {
                 .putExtra("Cine",detalleCine.text.toString())
                 .putExtra("Imagen", imageUrl)
                 .putExtra("Key", key)
+            startActivity(intent)
+        }
+
+        botonUbicacion.setOnClickListener {
+            val intent = Intent(this@DetalleActivity, MapsActivity::class.java)
+                .putExtra("Cine", detalleCine.text.toString())
             startActivity(intent)
         }
     }

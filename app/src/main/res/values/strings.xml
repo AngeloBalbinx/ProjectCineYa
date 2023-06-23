@@ -32,5 +32,7 @@
     <string name="cinemark">CineMark</string>
     <string name="cinepolis">Cinépolis</string>
     <string name="cine">Cine</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="btnUbicacion">Ver ubicación</string>
 
 </resources>

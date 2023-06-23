@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/bg_detailmovie"
+    android:orientation="vertical"
     tools:context=".DetalleActivity">
 
     <TextView
@@ -22,8 +21,8 @@
 
     <ImageView
         android:id="@+id/detalleImagen"
-        android:layout_width="330dp"
-        android:layout_height="292dp"
+        android:layout_width="249dp"
+        android:layout_height="183dp"
         android:layout_gravity="center"
         android:contentDescription="@string/imagendepelicula"
         android:padding="8dp"
@@ -31,28 +30,28 @@
         android:src="@drawable/addmovie" />
 
     <TextView
+        android:id="@+id/detalleDirector"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:background="@drawable/border"
         android:padding="20dp"
         android:text="@string/director"
-        android:background="@drawable/border"
-        android:layout_gravity="center"
-        android:id="@+id/detalleDirector"
-        android:textSize="18sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
     <TextView
+        android:id="@+id/detalleGenero"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:background="@drawable/border"
         android:padding="20dp"
         android:text="@string/genero"
-        android:background="@drawable/border"
-        android:layout_gravity="center"
-        android:id="@+id/detalleGenero"
-        android:textSize="18sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/detalleCine"
@@ -69,44 +68,55 @@
         android:textSize="18sp" />
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-
-    <com.github.clans.fab.FloatingActionMenu
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        app:fab_size="normal"
-        app:menu_colorNormal="@color/teal_700"
-        app:menu_colorPressed="@color/verdepastel"
-        app:menu_fab_size="normal"
-        app:menu_icon="@drawable/baseline_format_list_bulleted_24"
-        app:menu_openDirection="up"
-        app:menu_showShadow="true">
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/btnEditar"
+        <com.github.clans.fab.FloatingActionMenu
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_edit_24"
-            app:fab_colorNormal="@color/amarillopastel"
-            app:fab_showShadow="true"
-            app:fab_size="normal" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:fab_size="normal"
+            app:menu_colorNormal="@color/teal_700"
+            app:menu_colorPressed="@color/verdepastel"
+            app:menu_fab_size="normal"
+            app:menu_icon="@drawable/baseline_format_list_bulleted_24"
+            app:menu_openDirection="up"
+            app:menu_showShadow="true">
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/btnEliminar"
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_edit_24"
+                app:fab_colorNormal="@color/amarillopastel"
+                app:fab_showShadow="true"
+                app:fab_size="normal" />
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/btnEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_delete_24"
+                app:fab_colorNormal="@color/rojopastel"
+                app:fab_showShadow="true"
+                app:fab_size="normal" />
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+        <Button
+            android:id="@+id/btnUbicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_delete_24"
-            app:fab_colorNormal="@color/rojopastel"
-            app:fab_showShadow="true"
-            app:fab_size="normal" />
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="20dp"
+            android:text="@string/btnUbicacion"
+            android:textColor="#37474F"
+            tools:ignore="RtlSymmetry" />
 
-    </com.github.clans.fab.FloatingActionMenu>
     </RelativeLayout>
 </LinearLayout>
