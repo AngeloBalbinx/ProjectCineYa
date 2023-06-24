@@ -34,28 +34,31 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
         val latitud: Double
         val longitud: Double
 
         when(cine){
             "Cineplanet" -> {
-                latitud = -12.070750845730762
-                longitud = -77.01228651815528
+                latitud = -12.050260714778329
+                longitud = -77.033707483001
+
+
             }
             "Cinépolis" ->{
-                latitud = -12.088993844484136
-                longitud = -77.02009040293434
+                latitud = -12.007161281350491
+                longitud = -77.05898661631069
+
             }
             else -> {
-                latitud = -12.056249237386375
-                longitud = -77.03766779338176
+                latitud = -12.07086063153215
+                longitud = -77.01235133174217
             }
         }
 
+
         // Add a marker in Sydney and move the camera
         val sydney = LatLng(latitud, longitud)
-        mMap.addMarker(MarkerOptions().position(sydney).title(cine))
+        mMap.addMarker(MarkerOptions().position(sydney).title("Cine Seleccionado"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17f))
     }

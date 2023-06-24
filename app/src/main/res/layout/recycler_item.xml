@@ -33,28 +33,31 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             android:layout_toEndOf="@id/recImagen"/>
+
         <TextView
+            android:id="@+id/recGenero"
             android:layout_width="80dp"
             android:layout_height="30dp"
-            android:id="@+id/recGenero"
-            android:text="@string/genero"
-            android:layout_toEndOf="@id/recTitulo"
-            android:layout_marginTop="20dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="6dp"
+            android:layout_toEndOf="@id/recTitulo"
+            android:text="@string/genero"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/recCine"
-            android:layout_width="80dp"
+            android:layout_width="88dp"
             android:layout_height="30dp"
-            android:layout_marginStart="72dp"
+            android:layout_marginStart="65dp"
             android:layout_marginTop="50dp"
             android:layout_toEndOf="@+id/recDirector"
             android:text="@string/cine"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:visibility="gone"
             android:textSize="16sp" />
 
         <TextView
