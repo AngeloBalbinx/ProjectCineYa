@@ -13,16 +13,15 @@ import androidx.appcompat.app.AlertDialog
 import com.example.projectcineya.databinding.ActivitySubirBinding
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
-import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class SubirActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySubirBinding
-    var imagenURL:String?=null
-    var uri: Uri?=null
-    var cineSeleccionado:String = ""
+    private var imagenURL:String?=null
+    private var uri: Uri?=null
+    private var cineSeleccionado:String = ""
 
 
 
@@ -71,9 +70,9 @@ class SubirActivity : AppCompatActivity() {
         }
     }
     private fun uploadData(){
-        val titulo = binding.subirtitulo.text.toString()
-        val director = binding.subirDirector.text.toString()
-        val genero = binding.subirGenero.text.toString()
+        val titulo = binding.subirtitulo.editText?.text.toString()
+        val director = binding.subirDirector.editText?.text.toString()
+        val genero = binding.subirGenero.editText?.text.toString()
         val radioGroup =binding.radioGroup
         val selectedId = radioGroup.checkedRadioButtonId
         if(selectedId!=-1){
@@ -84,15 +83,13 @@ class SubirActivity : AppCompatActivity() {
         }
 
         val pelicula = PeliculaClass(titulo,director,genero, imagenURL,cineSeleccionado)
-        val currentDate = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(Date())
+        val currentDate = SimpleDateFormat("yyyy-MM-dd-HH-mm-ss", Locale.getDefault()).format(Date())
+
 
         FirebaseDatabase.getInstance().getReference("ProjectCineYa").child(currentDate)
             .setValue(pelicula).addOnCompleteListener{task ->
                 if(task.isSuccessful){
                     Toast.makeText(this@SubirActivity,"Guardado",Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@SubirActivity,MainActivity::class.java)
-                    intent.putExtra("cineSeleccionado",cineSeleccionado)
-                    startActivity(intent)
                     finish()
                 }
             }.addOnFailureListener{e ->

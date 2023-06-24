@@ -77,6 +77,7 @@ class ActualizarActivity : AppCompatActivity() {
             actualizarTitulo.setText(bundle.getString("Titulo"))
             actualizarDirector.setText(bundle.getString("Director"))
             actualizarGenero.setText(bundle.getString("Genero"))
+            actualizarCine.setText(bundle.getString("Cine"))
             key = bundle.getString("Key")?:""
             oldImageURL = bundle.getString("Imagen")
         }
@@ -125,26 +126,30 @@ class ActualizarActivity : AppCompatActivity() {
         titulo = actualizarTitulo.text.toString().trim()
         director = actualizarDirector.text.toString().trim()
         genero = actualizarGenero.text.toString().trim()
+        cine = actualizarCine.text.toString().trim()
 
+        val newDataClass = PeliculaClass(titulo, director, genero, imageUrl, cine)
+        val tempImageUrl = imageUrl // Guardar la URL de la imagen en una variable temporal
 
-        val dataClass = PeliculaClass(titulo, director, genero,imageUrl,cine)
-
-        databaseReference.setValue(dataClass)
+        databaseReference.setValue(newDataClass)
             .addOnCompleteListener { task: Task<Void?> ->
                 if (task.isSuccessful) {
-                    val reference = FirebaseStorage.getInstance().getReferenceFromUrl(oldImageURL!!)
-                    reference.delete().addOnSuccessListener {
-                        val intent = Intent(this@ActualizarActivity, MainActivity::class.java)
-                        intent.putExtra("imageUrl", imageUrl)
-                        startActivity(intent)
-                        Toast.makeText(this@ActualizarActivity, "Actualizado", Toast.LENGTH_SHORT).show()
-                        finish()
-                    }
-
+                    val intent = Intent(this@ActualizarActivity, MainActivity::class.java)
+                    intent.putExtra("imageUrl", imageUrl)
+                    startActivity(intent)
+                    Toast.makeText(this@ActualizarActivity, "Actualizado", Toast.LENGTH_SHORT).show()
+                    finish()
+                } else {
+                    // Restaurar la URL anterior en caso de error
+                    imageUrl = tempImageUrl
+                    Toast.makeText(this@ActualizarActivity, "Error al actualizar la película", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener { e: Exception ->
+                // Restaurar la URL anterior en caso de error
+                imageUrl = tempImageUrl
                 Toast.makeText(this@ActualizarActivity, e.message.toString(), Toast.LENGTH_SHORT).show()
             }
     }
+
 }

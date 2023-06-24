@@ -12,94 +12,112 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="320dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="20dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/rellenoverde"
-        android:padding="20dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:src="@drawable/addmovie"
-            android:id="@+id/subirimagen"
-            android:layout_marginTop="10dp"
-            android:scaleType="fitXY"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/subirtitulo"
-            android:background="@drawable/border"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            android:hint="@string/ingresanombrepeli"
-            android:gravity="start|center_vertical"
-            android:textColor="@color/black"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/subirDirector"
-            android:background="@drawable/border"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            android:hint="@string/ingresadirector"
-            android:gravity="start|center_vertical"
-            android:textColor="@color/black"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:id="@+id/subirGenero"
-            android:background="@drawable/border"
-            android:layout_marginTop="20dp"
-            android:padding="16dp"
-            android:hint="@string/ingresagenero"
-            android:gravity="start|center_vertical"
-            android:textColor="@color/black"/>
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:checkedButton="@+id/radioCinemark"
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-            <RadioButton
-                android:id="@+id/radioCinemark"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rellenoverde"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:id="@+id/subirimagen"
+                android:layout_width="263dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/addmovie" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/subirtitulo"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/cinemark"/>
-            <RadioButton
-                android:id="@+id/radioCineplanet"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="@string/ingresanombrepeli">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/subirDirector"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/cineplanet"/>
-            <RadioButton
-                android:id="@+id/radioCinepolis"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="@string/ingresadirector">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/subirGenero"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/cinepolis"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="@string/ingresagenero">
 
-        </RadioGroup>
-        <Button
-            android:id="@+id/btn_guardar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/guardar"
-            android:textSize="18sp"
-            android:layout_marginTop="20dp"
-            />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:checkedButton="@+id/radioCinemark">
+
+                <RadioButton
+                    android:id="@+id/radioCinemark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/cinemark"
+                    android:textColor="@android:color/black" />
+
+                <RadioButton
+                    android:id="@+id/radioCineplanet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/cineplanet"
+                    android:textColor="@android:color/black" />
+
+                <RadioButton
+                    android:id="@+id/radioCinepolis"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/cinepolis"
+                    android:textColor="@android:color/black" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_guardar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/guardar"
+                android:textSize="18sp" />
 
 
-
-
-
-
-
-    </LinearLayout>
+        </LinearLayout>
 
 
     </androidx.cardview.widget.CardView>
