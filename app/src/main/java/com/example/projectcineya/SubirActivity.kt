@@ -14,6 +14,7 @@ import com.example.projectcineya.databinding.ActivitySubirBinding
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -83,11 +84,15 @@ class SubirActivity : AppCompatActivity() {
         }
 
         val pelicula = PeliculaClass(titulo,director,genero, imagenURL,cineSeleccionado)
-        val currentDate=DateFormat.getTimeInstance().format(Calendar.getInstance().time)
+        val currentDate = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault()).format(Date())
+
         FirebaseDatabase.getInstance().getReference("ProjectCineYa").child(currentDate)
             .setValue(pelicula).addOnCompleteListener{task ->
                 if(task.isSuccessful){
                     Toast.makeText(this@SubirActivity,"Guardado",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@SubirActivity,MainActivity::class.java)
+                    intent.putExtra("cineSeleccionado",cineSeleccionado)
+                    startActivity(intent)
                     finish()
                 }
             }.addOnFailureListener{e ->

@@ -13,6 +13,7 @@
     <string name="ingresanombrepeli">Ingresa el título</string>
     <string name="ingresadirector">Ingresa el director</string>
     <string name="ingresagenero">Ingresa el género</string>
+    <string name="ingresacine">Ingresa el cine</string>
     <string name="guardar">Guardar</string>
     <string name="titulo">Título</string>
     <string name="director">Director</string>

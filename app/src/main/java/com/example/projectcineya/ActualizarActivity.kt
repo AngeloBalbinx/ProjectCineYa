@@ -32,13 +32,12 @@ class ActualizarActivity : AppCompatActivity() {
     private lateinit var actualizarTitulo: EditText
     private lateinit var actualizarGenero: EditText
     private lateinit var actualizarDirector: EditText
-    private lateinit var radioGroup:RadioGroup
-    private lateinit var cineSeleccionado:String
-    private lateinit var actualizarCine : TextView
+    private lateinit var actualizarCine: EditText
+
     private var titulo: String? = null
     private var genero: String? = null
     private var director: String? = null
-    private var cine: String?=null
+    private var cine:String?=null
     private var imageUrl: String? = null
     private var key = ""
     private var oldImageURL: String? = null
@@ -49,26 +48,17 @@ class ActualizarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actualizar)
+        cine = intent.getStringExtra("cineSeleccionado")?:""
 
         botonActualizar = findViewById(R.id.btn_actualizar)
         actualizarTitulo = findViewById(R.id.actualizatitulo)
         actualizarImagen = findViewById(R.id.actualizaimagen)
         actualizarDirector = findViewById(R.id.actualizaDirector)
         actualizarGenero = findViewById(R.id.actualizaGenero)
-        /*val selectedId = radioGroup.checkedRadioButtonId
-        if(selectedId!=-1){
-            val radioButton = findViewById<RadioButton>(selectedId)
-            val valorRB = radioButton.text.toString()
+        actualizarCine = findViewById(R.id.actualizaCine)
 
-        }*/
 
-        radioGroup = findViewById(R.id.radioGroupCine)
-        radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            val radioButton: RadioButton = findViewById<RadioButton>(checkedId)
 
-            val valorSeleccionado = radioButton.text.toString()
-            cineSeleccionado = valorSeleccionado
-        }
 
         val activityResultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -86,9 +76,8 @@ class ActualizarActivity : AppCompatActivity() {
             Glide.with(this@ActualizarActivity).load(bundle.getString("Imagen")).into(actualizarImagen)
             actualizarTitulo.setText(bundle.getString("Titulo"))
             actualizarDirector.setText(bundle.getString("Director"))
-            actualizarCine.setText(bundle.getString("Cine"))
             actualizarGenero.setText(bundle.getString("Genero"))
-            key = bundle.getString("Key")!!
+            key = bundle.getString("Key")?:""
             oldImageURL = bundle.getString("Imagen")
         }
 
@@ -136,16 +125,22 @@ class ActualizarActivity : AppCompatActivity() {
         titulo = actualizarTitulo.text.toString().trim()
         director = actualizarDirector.text.toString().trim()
         genero = actualizarGenero.text.toString().trim()
-        cine = cineSeleccionado
-        val dataClass = PeliculaClass(titulo, director, genero, cine,imageUrl)
+
+
+        val dataClass = PeliculaClass(titulo, director, genero,imageUrl,cine)
 
         databaseReference.setValue(dataClass)
             .addOnCompleteListener { task: Task<Void?> ->
                 if (task.isSuccessful) {
                     val reference = FirebaseStorage.getInstance().getReferenceFromUrl(oldImageURL!!)
-                    reference.delete()
-                    Toast.makeText(this@ActualizarActivity, "Actualizado", Toast.LENGTH_SHORT).show()
-                    finish()
+                    reference.delete().addOnSuccessListener {
+                        val intent = Intent(this@ActualizarActivity, MainActivity::class.java)
+                        intent.putExtra("imageUrl", imageUrl)
+                        startActivity(intent)
+                        Toast.makeText(this@ActualizarActivity, "Actualizado", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+
                 }
             }
             .addOnFailureListener { e: Exception ->

@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import com.example.projectcineya.databinding.ActivityMainBinding
 import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     var databaseReference:DatabaseReference?=null
     var eventListener:ValueEventListener?=null
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -71,6 +73,7 @@ class MainActivity : AppCompatActivity() {
 
         })
     }
+
     fun buscarLista(text:String){
         val buscarLista = ArrayList<PeliculaClass>()
         for(peliculaClass in dataList){

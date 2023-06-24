@@ -18,23 +18,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="300dp"
-            android:padding="20dp">
+            android:padding="20dp"
+            android:gravity="center">
+
             <EditText
-                android:layout_width="350dp"
-                android:layout_height="60dp"
-                android:layout_marginLeft="10dp"
                 android:id="@+id/logeo_email"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/border"
-                android:padding="8dp"
-                android:hint="@string/correo"
                 android:drawableLeft="@drawable/baseline_email_24"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black"/>
+                android:hint="@string/correo"
+                android:padding="8dp"
+                android:textColor="@color/black" />
             <EditText
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginLeft="10dp"
                 android:id="@+id/logeo_password"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/border"
@@ -46,8 +46,7 @@
                 android:textColor="@color/black"/>
             <Button
                 android:id="@+id/btn_iniciarsesion"
-                android:layout_width="350dp"
-                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/iniciarsesion"
