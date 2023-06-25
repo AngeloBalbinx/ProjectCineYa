@@ -34,6 +34,11 @@
     <string name="cinepolis">Cinépolis</string>
     <string name="cine">Cine</string>
     <string name="title_activity_maps">MapsActivity</string>
-    <string name="btnUbicacion">Ver ubicación</string>
+    <string name="btnUbicacion">Ver ubicación del cine</string>
+    <string name="cinelabel">Cine :</string>
+    <string name="directorlabel">Director :</string>
+    <string name="generolabel">Género :</string>
+    <string name="titulolabel">Título :</string>
+
 
 </resources>

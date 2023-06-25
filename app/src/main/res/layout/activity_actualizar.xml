@@ -12,7 +12,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="310dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         app:cardCornerRadius="5dp"
@@ -32,36 +32,92 @@
                 android:layout_marginTop="10dp"
                 android:scaleType="fitXY"
                 android:layout_gravity="center"/>
-            <EditText
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/actualizatitulo"
-                android:background="@drawable/border"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginTop="20dp"
-                android:padding="16dp"
-                android:hint="@string/ingresanombrepeli"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/black"/>
-            <EditText
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/lbltitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/bungee_shade"
+                    android:text="@string/titulolabel"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/actualizatitulo"
+                    android:background="@drawable/border"
+                    android:padding="16dp"
+                    android:layout_marginLeft="27dp"
+                    android:hint="@string/ingresanombrepeli"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/actualizaDirector"
-                android:background="@drawable/border"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginTop="20dp"
-                android:padding="16dp"
-                android:hint="@string/ingresadirector"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/black"/>
-            <EditText
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/lbldirector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/directorlabel"
+                    android:fontFamily="@font/bungee_shade"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/actualizaDirector"
+                    android:background="@drawable/border"
+                    android:padding="16dp"
+                    android:hint="@string/ingresadirector"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:id="@+id/actualizaGenero"
-                android:background="@drawable/border"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginTop="20dp"
-                android:padding="16dp"
-                android:hint="@string/ingresagenero"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/black"/>
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/lblgenero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/generolabel"
+                    android:fontFamily="@font/bungee_shade"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="10dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:id="@+id/actualizaGenero"
+                    android:background="@drawable/border"
+                    android:padding="16dp"
+                    android:hint="@string/ingresadirector"
+                    android:gravity="start|center_vertical"
+                    android:layout_marginLeft="25dp"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="60dp"

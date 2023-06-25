@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="310dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         android:id="@+id/buscar"
@@ -20,7 +20,7 @@
 
         app:closeIcon="@drawable/baseline_clear_24"
         app:searchIcon="@drawable/baseline_search_24"
-        android:background="@drawable/border"/>
+        android:background="@color/turquesa"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"

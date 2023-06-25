@@ -9,42 +9,71 @@
     android:layout_marginHorizontal="10dp"
     android:layout_marginVertical="10dp"
     app:cardCornerRadius="20dp"
-    app:cardElevation="8dp">
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="@color/amarilloclaro">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:id="@+id/recImagen"
-            android:src="@drawable/addmovie"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="10dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="10dp"
-            android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="30dp"
-            android:id="@+id/recTitulo"
-            android:text="@string/titulo"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_toEndOf="@id/recImagen"/>
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp">
 
-        <TextView
-            android:id="@+id/recGenero"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@id/recTitulo"
-            android:text="@string/genero"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/recImagen"
+                android:src="@drawable/addmovie"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:layout_width="175dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/recTitulo"
+                    android:text="@string/titulo"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recDirector"
+                    android:text="@string/director"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:maxLines="1"
+                    android:layout_marginTop="2dp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/recGenero"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="55dp"
+                android:text="@string/genero"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textAlignment="textEnd"
+                />
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/recCine"
@@ -52,23 +81,11 @@
             android:layout_height="30dp"
             android:layout_marginStart="65dp"
             android:layout_marginTop="50dp"
-            android:layout_toEndOf="@+id/recDirector"
+
             android:text="@string/cine"
             android:textAlignment="center"
             android:visibility="gone"
             android:textSize="16sp" />
 
-        <TextView
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/recDirector"
-            android:text="@string/director"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:layout_toEndOf="@id/recImagen"
-            android:layout_below="@id/recTitulo"
-            android:layout_marginStart="20dp"
-            android:maxLines="1"
-            android:layout_marginBottom="12dp"/>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
