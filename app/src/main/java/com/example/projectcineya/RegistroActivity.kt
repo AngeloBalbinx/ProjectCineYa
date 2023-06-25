@@ -25,6 +25,7 @@ class RegistroActivity : AppCompatActivity() {
                     firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener{
                         if(it.isSuccessful){
                             val intent = Intent(this,LogeoActivity::class.java)
+                            Toast.makeText(this,"Registro exitoso!",Toast.LENGTH_SHORT).show()
                             startActivity(intent)
                         }else{
                             Toast.makeText(this,it.exception.toString(),Toast.LENGTH_SHORT).show()
